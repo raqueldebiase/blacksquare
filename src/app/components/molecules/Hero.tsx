@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className="relative h-96 w-full">
+    <section className="relative h-screen w-full">
       <div>
         <Image 
           src="/hero.jpeg" 

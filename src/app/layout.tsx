@@ -22,7 +22,7 @@ export default function RootLayout({
         <header className="bg-white shadow p-4">
           <Navbar />
         </header>
-        <main className="container">{children}</main>
+        <main className="">{children}</main>
         <Footer />
       </body>
     </html>
