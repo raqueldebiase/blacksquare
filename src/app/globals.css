@@ -32,3 +32,26 @@ body {
     text-wrap: balance;
   }
 }
+
+
+/* font-style */
+
+.title-1-white {
+  @apply text-base text-white font-extralight
+}
+
+.title-2-white {
+  @apply text-base text-white font-extralight
+}
+
+.title-3-white {
+  @apply text-base text-white font-extralight
+}
+
+.title-4-white {
+  @apply text-base text-white font-extralight
+}
+
+.li-white ul li{
+  @apply font-extralight text-sm py-1
+}

@@ -13,8 +13,6 @@ const Hero = () => {
           layout="fill" 
           objectFit="cover"
           quality={100} 
-          className="rounded-md"
-          
         />
       </div>
     </section>
