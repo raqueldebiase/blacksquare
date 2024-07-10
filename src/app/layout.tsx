@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Navbar from "./components/organisms/Navbar";
 import "./globals.css";
+import Footer from "./components/organisms/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,16 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen bg-gray-100`}>
+      <body className={`${inter.className}  bg-gray-100`}>
         <header className="bg-white shadow p-4">
-          <div className="container mx-auto">
-            <h1 className="text-2xl font-bold">E-commerce</h1>
-          </div>
+          <Navbar />
         </header>
-        <main className="container mx-auto p-4">{children}</main>
-        <footer className="bg-gray-800 text-white p-4 text-center">
-          &copy; 2023 E-commerce. All rights reserved.
-        </footer>
+        <main className="container">{children}</main>
+        <Footer />
       </body>
     </html>
   );
