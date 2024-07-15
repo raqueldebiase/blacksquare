@@ -17,14 +17,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
   height: 100vh;
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -54,4 +47,14 @@ body {
 
 .li-white ul li{
   @apply font-extralight text-sm py-1
+}
+
+/* custom bg-images */
+
+.custom-hero-bg {
+  background-image: url('/hero.jpeg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }

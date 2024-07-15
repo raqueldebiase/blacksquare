@@ -1,3 +1,4 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "./components/organisms/Navbar";
@@ -18,11 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}  bg-gray-100`}>
+      <body className={`${inter.className} flex flex-col min-h-screen`}>
         <header className="bg-white shadow p-4">
           <Navbar />
         </header>
-        <main className="">{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,3 +1,4 @@
+// src/pages/index.tsx
 import React from 'react';
 import Hero from './components/molecules/Hero';
 import Main from './components/molecules/Main';
@@ -18,7 +19,7 @@ const HomePage = () => {
         <Magazine />
         <Upcoming />
       </section>
-    <Seach />
+      <Seach />
     </section>
   );
 };
