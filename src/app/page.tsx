@@ -1,7 +1,7 @@
 // src/pages/index.tsx
 import React from 'react';
 import Hero from './components/molecules/Hero';
-import Main from './components/molecules/Main';
+import Presentation from './components/molecules/Presentation';
 import Spotlight from './components/molecules/Spotlight';
 import Gallery from './components/organisms/Gallery';
 import Magazine from './components/organisms/Magazine';
@@ -12,7 +12,9 @@ const HomePage = () => {
   return (
     <section>
       <Hero />
-      <Main />
+      <section className='bg-presentation'>
+        <Presentation />
+      </section>
       <Spotlight />
       <Gallery />
       <section className='flex'>

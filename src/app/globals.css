@@ -27,6 +27,8 @@ body {
 }
 
 
+
+
 /* font-style */
 
 .title-1-white {
@@ -49,7 +51,15 @@ body {
   @apply font-extralight text-sm py-1
 }
 
-/* custom bg-images */
+.title-presentation {
+  color: #653F26;
+}
+
+.text-bege {
+  color: #776B59;
+}
+
+/* custom bg */
 
 .custom-hero-bg {
   background-image: url('/hero.jpeg');
@@ -57,4 +67,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+
+.bg-presentation {
+  background-color: #071323;
 }
