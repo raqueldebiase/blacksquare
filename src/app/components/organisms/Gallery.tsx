@@ -41,7 +41,7 @@ const Gallery = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-10">
-      <h2 className="text-2xl font-bold mb-4">Gallery</h2>
+      <h2 className="text-2xl py-5 mb-4">Gallery</h2>
       <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
         {images.map((image, index) => (
           <div key={index} className="relative break-inside-avoid group overflow-hidden">

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import ButtomInfo from '../atoms/ButtomInfo';
 import Image1 from '../../../../public/1.jpeg';
 import Image2 from '../../../../public/2.jpeg';
 import Image3 from '../../../../public/meninaSemBrinco.jpeg';
@@ -64,11 +65,9 @@ const Spotlight = () => {
             style={{ backgroundImage: `url(${imageInfo.url})` }}
           >
             <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-4 rounded">
-              <h2 className="text-2xl font-bold">{imageInfo.title}</h2>
+              <h2 className="text-2xl">{imageInfo.title}</h2>
               <p>{imageInfo.description}</p>
-              <button className="mt-4 px-4 py-2 bg-black bg-opacity-50 text-white rounded hover:bg-opacity-90">
-                more info
-              </button>
+              <ButtomInfo />
             </div>
           </div>
         ))}

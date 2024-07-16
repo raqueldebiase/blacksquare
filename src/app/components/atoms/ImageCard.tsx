@@ -22,7 +22,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ src, title, description }) => {
       </div>
       <div className="absolute inset-0 bg-black bg-opacity-20 flex items-end justify-center">
         <div className="bg-black bg-opacity-50 text-white p-2 w-full">
-          <h3 className="text-1xl font-bold mb-1">{title}</h3>
+          <h3 className="text-lg mb-1">{title}</h3>
           <p>{description}</p>
         </div>
       </div>

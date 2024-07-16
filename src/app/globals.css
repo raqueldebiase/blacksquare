@@ -69,7 +69,8 @@ body {
   background-size: cover;
 }
 
-.bg-presentation {
+.bg-presentation,
+.bg-footer {
   background-color: #071323;
 }
 
@@ -87,3 +88,8 @@ body {
 .break-inside-avoid {
   break-inside: avoid;
 }
+
+/* atoms style */
+
+
+

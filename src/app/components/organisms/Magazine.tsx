@@ -17,14 +17,14 @@ const Magazine = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-10">
-      <h1 className="text-2xl font-bold mb-4">MAG</h1>
+      <h1 className="text-2xl py-5 mb-4">MAG</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="h-96">
-          <h2 className="text-2xl mb-4">Upcoming</h2>
+          <h2 className="text-lg mb-4">Upcoming</h2>
           <Upcoming />
         </div>
         <div className="h-80">
-          <h2 className="text-2xl mb-4">Talking about</h2>
+          <h2 className="text-lg mb-4">Talking about</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {images.map((image, index) => (
           <div key={index} className="h-48 ">
