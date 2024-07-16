@@ -73,3 +73,9 @@ body {
 .bg-presentation {
   background-color: #071323;
 }
+
+/* Masonry layout */
+
+.break-inside-avoid {
+  break-inside: avoid;
+}
