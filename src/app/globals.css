@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,9 +30,6 @@ body {
     text-wrap: balance;
   }
 }
-
-
-
 
 /* font-style */
 
@@ -91,5 +93,10 @@ body {
 
 /* atoms style */
 
+/* organisms style */
+
+.borderHover:hover {
+  border: 1px solid #071323;
+}
 
 

@@ -1,3 +1,4 @@
+// src/pages/index.tsx (ou HomePage.tsx)
 import React from 'react';
 import Hero from './components/molecules/Hero';
 import Presentation from './components/molecules/Presentation';
@@ -12,12 +13,18 @@ const HomePage = () => {
   return (
     <section>
       <Hero />
-      <section className='bg-presentation'>
+      <section id="presentation" className='bg-presentation'>
         <Presentation />
       </section>
+      <section id='spotlight'>
       <Spotlight />
-      <Gallery />
-      <Magazine />
+      </section>
+      <section id="gallery">
+        <Gallery />
+      </section>
+      <section id="magazine">
+        <Magazine />
+      </section>
       <section className='bg-search'>
         <Search />
       </section>
