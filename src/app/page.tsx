@@ -1,12 +1,12 @@
-// src/pages/index.tsx
 import React from 'react';
 import Hero from './components/molecules/Hero';
 import Presentation from './components/molecules/Presentation';
-import Spotlight from './components/molecules/Spotlight';
+import Spotlight from './components/organisms/Spotlight';
 import Gallery from './components/organisms/Gallery';
 import Magazine from './components/organisms/Magazine';
 import Upcoming from './components/molecules/Upcoming';
-import Seach from './components/molecules/Seach';
+import Search from './components/organisms/Search';
+import '../app/globals.css';
 
 const HomePage = () => {
   return (
@@ -17,11 +17,10 @@ const HomePage = () => {
       </section>
       <Spotlight />
       <Gallery />
-      <section className='flex'>
-        <Magazine />
-        <Upcoming />
+      <Magazine />
+      <section className='bg-search'>
+        <Search />
       </section>
-      <Seach />
     </section>
   );
 };

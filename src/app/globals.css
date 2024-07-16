@@ -69,10 +69,18 @@ body {
   background-size: cover;
 }
 
-
 .bg-presentation {
   background-color: #071323;
 }
+
+.bg-search {
+  background-image: url('/alicia-steels-PA2rnR4pF9A-unsplash.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 
 /* Masonry layout */
 
