@@ -2,9 +2,9 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Image1 from '../../../../public/phil-hearing-7xvN2q2ce-k-unsplash.jpg';
-import Image2 from '../../../../public/redd-f-y3MNRXtUaUs-unsplash.jpg';
-import Image3 from '../../../../public/platforma-za-drustveni-centar-cakovec-JKSXxal-UAI-unsplash.jpg';
+import Image1 from '../../../../public/magazine/phil-hearing-7xvN2q2ce-k-unsplash.jpg';
+import Image2 from '../../../../public/magazine/redd-f-y3MNRXtUaUs-unsplash.jpg';
+import Image3 from '../../../../public/magazine/platforma-za-drustveni-centar-cakovec-JKSXxal-UAI-unsplash.jpg';
 
 const Upcoming = () => {
   const [activeIndex, setActiveIndex] = useState(0);

@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import ButtomInfo from '../atoms/ButtomInfo';
-import Image1 from '../../../../public/1.jpeg';
-import Image2 from '../../../../public/2.jpeg';
-import Image3 from '../../../../public/meninaSemBrinco.jpeg';
+import Image1 from '../../../../public/spotlight/1.jpeg';
+import Image2 from '../../../../public/spotlight/2.jpeg';
+import Image3 from '../../../../public/spotlight/meninaSemBrinco.jpeg';
 
 const Spotlight = () => {
   // Convertendo as imagens importadas em URLs válidas

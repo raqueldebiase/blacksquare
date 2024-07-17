@@ -1,12 +1,23 @@
 // src/components/organisms/Navbar.tsx
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from '../../../../public/BS.svg';
 
 const Navbar = () => {
   return (
     <nav className="p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-xl">BS</Link>
+        <Link href="/" className="">
+        <Image
+              src={logo.src}
+              alt={logo}
+              width={40}
+              height={40}
+              layout="intrinsic"
+              className=""
+            />
+        </Link>
         <div className="flex space-x-10">
           <div className="relative group">
             <Link href="/#spotlight" className="text-gray-700 transition duration-300">

@@ -77,7 +77,7 @@ body {
 }
 
 .bg-search {
-  background-image: url('/ryan-stefan-5K98ScREEUY-unsplash.jpg');
+  background-image: url('../../../blacksquare/public/search.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;

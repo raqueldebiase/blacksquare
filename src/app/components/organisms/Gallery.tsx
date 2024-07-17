@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Image1 from '../../../../public/1.jpeg';
-import Image2 from '../../../../public/2.jpeg';
-import Image3 from '../../../../public/meninaSemBrinco.jpeg';
+import Image1 from '../../../../public/gallery/latinos.png';
+import Image2 from '../../../../public/gallery/atemporal.png';
+import Image3 from '../../../../public/gallery/midsummer.png';
 import Image4 from '../../../../public/gallery/atemporal.png';
 import Image5 from '../../../../public/gallery/latinos.png';
 import Image6 from '../../../../public/gallery/midsummer.png';
