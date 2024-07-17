@@ -2,24 +2,32 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Image1 from '../../../../public/gallery/latinos.png';
+import Image1 from '../../../../public/spotlight/meninaSemBrinco.jpeg';
 import Image2 from '../../../../public/gallery/atemporal.png';
-import Image3 from '../../../../public/gallery/midsummer.png';
-import Image4 from '../../../../public/gallery/atemporal.png';
-import Image5 from '../../../../public/gallery/latinos.png';
+import Image3 from '../../../../public/gallery/um-retrato-contemporaneo-renascentista-de-um-menin-64GPSNHXR8CQNjvJGah5Ug-GiwfX1tBQC2tL2cpWGxLuA.png';
+import Image4 from '../../../../public/gallery/latinos.png';
+import Image5 from '../../../../public/gallery/a-captivating-pontilismo-painting-that-vividly-por-0fu9K2BsTKm8jIXUNZztZA-ehyxQo9JQ5qzNXSX2nQGuw.png';
 import Image6 from '../../../../public/gallery/midsummer.png';
-import Image7 from '../../../../public/gallery/plane.png';
+import Image7 from '../../../../public/gallery/a-minimalistic-image-of-group-of-people-sitting-on-q1QeuLmbQnq0iP53P2buuA-33AI6c0rRq6qnm_q8vfiGg.png';
 import Image8 from '../../../../public/gallery/psico.png';
-import Image9 from '../../../../public/gallery/quando opovo.png';
+import Image9 from '../../../../public/gallery/a-vivid-and-thought-provoking-cubist-style-paintin-iPHFCQ-wSeWh9cfUv5F9gw-qdyYb3KwQDKptU8a4Vk5RA.png';
 import Image10 from '../../../../public/gallery/renascence.png';
 import Image11 from '../../../../public/gallery/retratoModerno.png';
+import Image12 from '../../../../public/gallery/crie-uma-cena-seguindo-o-estilo-artistico-de-picas-k-UJs_vMSqSkqYnmDwmivw-HH5pwZSoQoum8wWt1CY6OA.png';
+import Image13 from '../../../../public/gallery/tessla.png';
+import Image14 from '../../../../public/spotlight/2.jpeg';
 
 const initialImages = [
   { src: Image1, title: 'Title 1', description: 'Description 1' },
   { src: Image2, title: 'Title 2', description: 'Description 2' },
   { src: Image3, title: 'Title 3', description: 'Description 3' },
-  { src: Image4, title: 'Title 4', description: 'Description 4' },
+  
   { src: Image5, title: 'Title 5', description: 'Description 5' },
+  { src: Image12, title: 'Title 12', description: 'Description 12' },
+  { src: Image14, title: 'Title 12', description: 'Description 12' },
+  { src: Image4, title: 'Title 4', description: 'Description 4' },
+
+  
 ];
 const moreImages = [
   { src: Image6, title: 'Title 6', description: 'Description 6' },
@@ -28,6 +36,7 @@ const moreImages = [
   { src: Image9, title: 'Title 9', description: 'Description 9' },
   { src: Image10, title: 'Title 10', description: 'Description 10' },
   { src: Image11, title: 'Title 11', description: 'Description 11' },
+  { src: Image13, title: 'Title 13', description: 'Description 13' },
 ];
 
 const Gallery = () => {

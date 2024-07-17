@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import ButtomInfo from '../atoms/ButtomInfo';
 import Image1 from '../../../../public/spotlight/1.jpeg';
-import Image2 from '../../../../public/spotlight/2.jpeg';
+import Image2 from '../../../../public/gallery/tessla.png';
 import Image3 from '../../../../public/spotlight/meninaSemBrinco.jpeg';
 
 const Spotlight = () => {

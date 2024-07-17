@@ -42,9 +42,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="hidden md:block">
-          <p className="p-2 border-transparent hover:border-gray-300 focus:border-gray-300 cursor-pointer">
-            ENTER
-          </p>
+          <Link href="/login" className="p-2 border-transparent hover:border-gray-300 focus:border-gray-300 cursor-pointer">SING IN </Link>
         </div>
 
         <div className="md:hidden">
