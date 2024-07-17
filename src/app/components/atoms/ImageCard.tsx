@@ -15,9 +15,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ src, title, description }) => {
         <Image
           src={src}
           alt={`Image - ${title}`}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
+          className=""
         />
       </div>
       <div className="absolute inset-0 bg-black bg-opacity-20 flex items-end justify-center">

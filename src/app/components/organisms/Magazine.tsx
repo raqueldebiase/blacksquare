@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import ImageCard from '../atoms/ImageCard';
 import Upcoming from '../molecules/Upcoming';
 import News1 from '../../../../public/magazine/steven-su-kbZkBKrYBAk-unsplash.jpg';
@@ -11,7 +12,7 @@ const Magazine = () => {
     { src: News1, title: 'Title 1', description: 'Description 1' },
     { src: News2, title: 'Title 2', description: 'Description 2' },
     { src: News3, title: 'Title 3', description: 'Description 3' },
-    { src: News4, title: 'Title 3', description: 'Description 3' },
+    { src: News4, title: 'Title 4', description: 'Description 4' },
     // Adicione mais imagens conforme necessário
   ];
 
@@ -26,16 +27,16 @@ const Magazine = () => {
         <div className="h-80">
           <h2 className="text-lg mb-4">Talking about</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {images.map((image, index) => (
-          <div key={index} className="h-48 ">
-            <ImageCard
-              src={image.src}
-              title={image.title}
-              description={image.description}
-            />
+            {images.map((image, index) => (
+              <div key={index} className="h-48 relative overflow-hidden ">
+                <ImageCard
+                  src={image.src}
+                  title={image.title}
+                  description={image.description}
+                />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
         </div>
       </div>
     </div>

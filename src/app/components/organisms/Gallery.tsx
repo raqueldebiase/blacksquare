@@ -49,7 +49,7 @@ const Gallery = () => {
               src={image.src.src}
               alt={`Gallery image ${index + 1}`}
               className="w-full h-auto rounded-lg shadow-md"
-              layout="responsive"
+              style={{ objectFit: 'cover' }}
               width={image.src.width}
               height={image.src.height}
             />
