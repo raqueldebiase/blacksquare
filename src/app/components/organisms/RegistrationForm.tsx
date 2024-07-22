@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import ButtonEnter from '../atoms/ButtonEnter';
 import FormField from '../molecules/FormField';
+import Link from 'next/link';
 
 const RegistrationForm = () => {
   const [email, setEmail] = useState('');
@@ -34,7 +35,7 @@ const RegistrationForm = () => {
 
   return (
     <div className="w-full max-w-md p-8 glass-effect">
-      <h1 className="text-2xl mb-6 text-center">Registro</h1>
+      <h1 className="text-2xl mb-6 text-center">Register</h1>
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-4 mx-auto">
         <FormField
@@ -47,7 +48,7 @@ const RegistrationForm = () => {
         />
         <FormField
           id="password"
-          label="Senha"
+          label="Password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -55,7 +56,7 @@ const RegistrationForm = () => {
         />
         <FormField
           id="confirmPassword"
-          label="Confirmar Senha"
+          label="Confirm password"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
@@ -63,6 +64,11 @@ const RegistrationForm = () => {
         />
         <ButtonEnter />
       </form>
+      <div className="mt-4">
+        <p className="text-sm text-white text-center">
+          Have an account? <Link href="/login" className="text-yellow hover:underline">Login here</Link>
+        </p>
+      </div>
     </div>
   );
 };

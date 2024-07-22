@@ -11,6 +11,7 @@ html {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --text-yellow: #E9B70D;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,6 +60,10 @@ body {
 
 .text-bege {
   color: #776B59;
+}
+
+.text-yellow {
+  color: var(--text-yellow);
 }
 
 /* custom bg */
@@ -126,4 +131,8 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
   position: relative; /* Para garantir que o z-index funcione */
   z-index: 10; /* Coloca o formulário acima da sobreposição */
+}
+
+form {
+  color: white;
 }
