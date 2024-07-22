@@ -36,7 +36,7 @@ const RegistrationForm = () => {
       console.log('Registro bem-sucedido');
       router.push('/'); // Redireciona para a homepage após o registro
     } catch (error) {
-      console.error('Erro ao registrar:', error); // Adicione um console.error para obter mais detalhes
+      console.error('Erro ao registrar:', error);
       setError('Erro ao registrar. Tente novamente.');
     }
   };
@@ -50,7 +50,11 @@ const RegistrationForm = () => {
       router.push('/'); // Redireciona para a homepage após o login com Google
     } catch (error) {
       console.error('Erro ao fazer login com Google:', error);
-      setError('Erro ao fazer login com Google.');
+      if (error.code === 'auth/popup-closed-by-user') {
+        setError('O login foi cancelado. Por favor, tente novamente.');
+      } else {
+        setError('Erro ao fazer login com Google. Tente novamente.');
+      }
     }
   };
 
@@ -91,11 +95,9 @@ const RegistrationForm = () => {
         </p>
       </div>
       <div className="my-4 text-center">
-      <button onClick={handleGoogleLogin} className="w-48 text-sm bg-blue-500 text-white py-2 rounded-lg hover:text-black focus:text-black hover:underline">
-          <span className="flex justify-center items-center space-x-2">
+        <button onClick={handleGoogleLogin} className="w-48 text-sm bg-blue-500 text-white py-2 rounded-lg flex items-center justify-center space-x-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
           <Image src={googleIcon} alt="Google" width={24} height={24} />
           <span>Sign in with Google</span>
-        </span>
         </button>
       </div>
     </div>
