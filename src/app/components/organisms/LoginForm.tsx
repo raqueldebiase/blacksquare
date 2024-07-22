@@ -29,7 +29,7 @@ const LoginForm = () => {
 
   return (
     <div className="w-full max-w-md p-10 bg-white rounded-lg shadow-lg glass-effect">
-      <h1 className="text-2xl mb-6 text-center">Sign in</h1>
+      <h2 className="text-2xl mb-6 text-center">Sign in</h2>
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
         <FormField

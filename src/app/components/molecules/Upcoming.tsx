@@ -45,7 +45,7 @@ const Upcoming = () => {
       </div>
       <div className="absolute inset-0 flex items-end">
         <div className="bg-black bg-opacity-50 text-white p-4 w-full">
-          <h3 className="text-lg mb-2">{currentImage.title}</h3>
+          <h2 className="text-lg mb-2">{currentImage.title}</h2>
           <p>{currentImage.description}</p>
         </div>
       </div>

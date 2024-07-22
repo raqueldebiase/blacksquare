@@ -59,7 +59,7 @@ body {
 }
 
 .text-bege {
-  color: #776B59;
+  color: #B46143;
 }
 
 .text-yellow {
@@ -125,7 +125,7 @@ body {
 /* general styles */
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.2); /* Cor de fundo branca com 20% de opacidade */
+  background: rgba(255, 255, 255, 0.3); /* Cor de fundo branca com 20% de opacidade */
   backdrop-filter: blur(10px); /* Adiciona o efeito de desfoque */
   border-radius: 5px; /* Arredonda os cantos do contêiner */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
