@@ -39,7 +39,7 @@ const LoginForm = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       console.log('Login com Google bem-sucedido', result.user);
-      router.push('/'); // Redireciona para a homepage após o login
+      router.push('/dashboard'); // Redireciona para a homepage após o login
     } catch (error) {
       setError('Erro ao fazer login com Google.');
     }

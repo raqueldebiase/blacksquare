@@ -35,7 +35,7 @@ const Navbar = () => {
             </NavLink>
           </div>
           <div className="relative group">
-            <NavLink href="/#Magazine">
+            <NavLink href="/#magazine">
               <span className="relative z-10">Magazine</span>
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-transparent group-hover:bg-gray-900 transition duration-300"></span>
             </NavLink>

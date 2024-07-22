@@ -34,7 +34,7 @@ const RegistrationForm = () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       console.log('Registro bem-sucedido');
-      router.push('/'); // Redireciona para a homepage após o registro
+      router.push('/login'); // Redireciona para a homepage após o registro
     } catch (error) {
       console.error('Erro ao registrar:', error);
       setError('Erro ao registrar. Tente novamente.');
@@ -47,7 +47,7 @@ const RegistrationForm = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       console.log('Login com Google bem-sucedido', result.user);
-      router.push('/'); // Redireciona para a homepage após o login com Google
+      router.push('/login'); // Redireciona para a homepage após o login com Google
     } catch (error) {
       console.error('Erro ao fazer login com Google:', error);
 
