@@ -50,10 +50,18 @@ const RegistrationForm = () => {
       router.push('/'); // Redireciona para a homepage após o login com Google
     } catch (error) {
       console.error('Erro ao fazer login com Google:', error);
-      if (error.code === 'auth/popup-closed-by-user') {
-        setError('O login foi cancelado. Por favor, tente novamente.');
+
+      // Verifique se o erro é uma instância de Error padrão
+      if (error instanceof Error) {
+        // Verifica o código de erro específico do Firebase
+        if (error.message.includes('auth/popup-closed-by-user')) {
+          setError('O login foi cancelado. Por favor, tente novamente.');
+        } else {
+          setError('Erro ao fazer login com Google. Tente novamente.');
+        }
       } else {
-        setError('Erro ao fazer login com Google. Tente novamente.');
+        // Caso o erro não seja um Error padrão
+        setError('Erro desconhecido. Tente novamente.');
       }
     }
   };
