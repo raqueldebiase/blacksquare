@@ -125,14 +125,11 @@ body {
 /* general styles */
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.3); /* Cor de fundo branca com 20% de opacidade */
-  backdrop-filter: blur(10px); /* Adiciona o efeito de desfoque */
-  border-radius: 5px; /* Arredonda os cantos do contêiner */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
-  position: relative; /* Para garantir que o z-index funcione */
-  z-index: 10; /* Coloca o formulário acima da sobreposição */
+  background: rgba(255, 255, 255, 0.3); 
+  backdrop-filter: blur(10px); 
+  border-radius: 5px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  position: relative; 
+  z-index: 10; 
 }
 
-form {
-  color: white;
-}

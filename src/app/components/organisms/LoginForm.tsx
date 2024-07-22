@@ -1,18 +1,23 @@
+// src/components/organisms/LoginForm.tsx
 'use client';
 
-// src/components/organisms/LoginForm.tsx
 import React, { useState } from 'react';
-import FormField from '../molecules/FormField'; // Importando o componente FormField
-import ButtonEnter from '../atoms/ButtonEnter'; // Importando o botão de entrada
-import Label from '../atoms/Label'; // Importando o Label, se necessário
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { auth } from '../../firebaseConfig';
+import FormField from '../molecules/FormField';
+import ButtonEnter from '../atoms/ButtonEnter';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import googleIcon from '../../../../public/icon-google.svg';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter();
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     if (!email || !password) {
@@ -20,18 +25,31 @@ const LoginForm = () => {
       return;
     }
 
-    // Aqui você pode adicionar a lógica de autenticação
-    console.log('Email:', email);
-    console.log('Senha:', password);
-    setError('');
-    // Redirecionar ou mostrar uma mensagem de sucesso
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      console.log('Login bem-sucedido');
+      router.push('/'); // Redireciona para a homepage após o login
+    } catch (error) {
+      setError('Erro ao fazer login. Verifique suas credenciais.');
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      console.log('Login com Google bem-sucedido', result.user);
+      router.push('/'); // Redireciona para a homepage após o login
+    } catch (error) {
+      setError('Erro ao fazer login com Google.');
+    }
   };
 
   return (
     <div className="w-full max-w-md p-10 bg-white rounded-lg shadow-lg glass-effect">
       <h2 className="text-2xl mb-6 text-center">Sign in</h2>
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 mb-20">
         <FormField
           id="email"
           label="Email"
@@ -50,9 +68,15 @@ const LoginForm = () => {
         />
         <ButtonEnter />
       </form>
-      <div className="mt-4">
-        <p className="text-sm text-center text-white">
-          You dont have an account yet? <Link href="/register" className="text-yellow hover:underline">Sign in here</Link>
+      <div className="my-4 text-center">
+        <button onClick={handleGoogleLogin} className="w-48 text-sm bg-blue-500 text-white py-2 rounded-lg hover:text-black focus:text-black hover:underline">
+          <span className="flex justify-center items-center space-x-2">
+          <Image src={googleIcon} alt="Google" width={24} height={24} />
+          <span>Sign in with Google</span>
+        </span>
+        </button>
+        <p className="text-sm text-center text-black mt-4">
+          You dont have an account yet? <Link href="/register" className="text-black hover:underline">Sign up here</Link>
         </p>
       </div>
     </div>

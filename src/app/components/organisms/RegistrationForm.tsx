@@ -1,19 +1,24 @@
-// src/components/organisms/RegistrationForm.tsx
-
 'use client';
 
 import React, { useState } from 'react';
+import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { auth } from '../../firebaseConfig';
 import ButtonEnter from '../atoms/ButtonEnter';
 import FormField from '../molecules/FormField';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import googleIcon from '../../../../public/icon-google.svg';
 
 const RegistrationForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter();
 
-  const handleSubmit = (event: React.FormEvent) => {
+  // Função para registrar com e-mail e senha
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     if (!email || !password || !confirmPassword) {
@@ -26,18 +31,34 @@ const RegistrationForm = () => {
       return;
     }
 
-    // Lógica para registro (ex: enviar dados para uma API)
-    console.log('Email:', email);
-    console.log('Senha:', password);
-    setError('');
-    // Redirecionar ou mostrar uma mensagem de sucesso
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      console.log('Registro bem-sucedido');
+      router.push('/'); // Redireciona para a homepage após o registro
+    } catch (error) {
+      console.error('Erro ao registrar:', error); // Adicione um console.error para obter mais detalhes
+      setError('Erro ao registrar. Tente novamente.');
+    }
+  };
+
+  // Função para login com Google
+  const handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      console.log('Login com Google bem-sucedido', result.user);
+      router.push('/'); // Redireciona para a homepage após o login com Google
+    } catch (error) {
+      console.error('Erro ao fazer login com Google:', error);
+      setError('Erro ao fazer login com Google.');
+    }
   };
 
   return (
     <div className="w-full max-w-md p-8 glass-effect">
       <h1 className="text-2xl mb-6 text-center">Register</h1>
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-      <form onSubmit={handleSubmit} className="space-y-4 mx-auto">
+      <form onSubmit={handleSubmit} className="space-y-4 mb-20 mx-auto">
         <FormField
           id="email"
           label="Email"
@@ -64,10 +85,18 @@ const RegistrationForm = () => {
         />
         <ButtonEnter />
       </form>
-      <div className="mt-4">
-        <p className="text-sm text-white text-center">
-          Have an account? <Link href="/login" className="text-yellow hover:underline">Login here</Link>
+      <div className="mt-4 text-center">
+        <p className="text-sm text-black">
+          Have an account? <Link href="/login" className="text-black hover:underline">Login here</Link>
         </p>
+      </div>
+      <div className="my-4 text-center">
+      <button onClick={handleGoogleLogin} className="w-48 text-sm bg-blue-500 text-white py-2 rounded-lg hover:text-black focus:text-black hover:underline">
+          <span className="flex justify-center items-center space-x-2">
+          <Image src={googleIcon} alt="Google" width={24} height={24} />
+          <span>Sign in with Google</span>
+        </span>
+        </button>
       </div>
     </div>
   );
