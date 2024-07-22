@@ -97,16 +97,16 @@ const RegistrationForm = () => {
         />
         <ButtonEnter />
       </form>
-      <div className="mt-4 text-center">
-        <p className="text-sm text-black">
-          Have an account? <Link href="/login" className="text-black hover:underline">Login here</Link>
-        </p>
-      </div>
       <div className="my-4 text-center">
-        <button onClick={handleGoogleLogin} className="w-48 text-sm bg-blue-500 text-white py-2 rounded-lg flex items-center justify-center space-x-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button onClick={handleGoogleLogin} className="w-48 text-sm bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-700">
+          <span className="flex justify-center items-center space-x-2">
           <Image src={googleIcon} alt="Google" width={24} height={24} />
           <span>Sign in with Google</span>
+        </span>
         </button>
+        <p className="text-sm text-center text-black mt-4">
+          Have an account? <Link href="/login" className="text-black hover:underline">Sign up here</Link>
+        </p>
       </div>
     </div>
   );

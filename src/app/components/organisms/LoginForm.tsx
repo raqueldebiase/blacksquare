@@ -69,7 +69,7 @@ const LoginForm = () => {
         <ButtonEnter />
       </form>
       <div className="my-4 text-center">
-        <button onClick={handleGoogleLogin} className="w-48 text-sm bg-blue-500 text-white py-2 rounded-lg hover:text-black focus:text-black hover:underline">
+        <button onClick={handleGoogleLogin} className="w-48 text-sm bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-700">
           <span className="flex justify-center items-center space-x-2">
           <Image src={googleIcon} alt="Google" width={24} height={24} />
           <span>Sign in with Google</span>
