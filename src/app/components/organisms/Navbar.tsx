@@ -1,13 +1,14 @@
 'use client';
 
-// src/components/organisms/Navbar.tsx
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../../../public/BS.svg';
+import { useAuth } from '@/context/AuthContext'; // Certifique-se do caminho correto
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useAuth(); // Obtém o estado de autenticação
 
   return (
     <nav className="p-4 bg-white">
@@ -18,7 +19,6 @@ const Navbar = () => {
             alt="BS"
             width={40}
             height={40}
-            
           />
         </Link>
         <div className="hidden md:flex space-x-10">
@@ -42,7 +42,16 @@ const Navbar = () => {
           </div>
         </div>
         <div className="hidden md:block">
-          <Link href="/login" className="p-2 border-transparent hover:border-gray-300 focus:border-gray-300 cursor-pointer">SING IN </Link>
+          {/* Exibe "Profile" se o usuário estiver logado, caso contrário, exibe "Login" */}
+          {user ? (
+            <Link href="/dashboard" className="p-2 border-transparent hover:border-gray-300 focus:border-gray-300 cursor-pointer">
+              Account
+            </Link>
+          ) : (
+            <Link href="/login" className="p-2 border-transparent hover:border-gray-300 focus:border-gray-300 cursor-pointer">
+              LOGIN
+            </Link>
+          )}
         </div>
 
         <div className="md:hidden">

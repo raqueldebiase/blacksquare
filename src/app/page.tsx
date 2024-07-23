@@ -8,10 +8,12 @@ import Magazine from './components/organisms/Magazine';
 import Upcoming from './components/molecules/Upcoming';
 import Search from './components/organisms/Search';
 import '../app/globals.css';
+import { AuthProvider } from '@/context/AuthContext';
 
 const HomePage = () => {
   return (
-    <section>
+    <AuthProvider>
+      <section>
       <Hero />
       <section id="presentation" className='bg-presentation'>
         <Presentation />
@@ -28,7 +30,9 @@ const HomePage = () => {
       <section className='bg-search'>
         <Search />
       </section>
-    </section>
+      </section>
+    </AuthProvider>
+    
   );
 };
 

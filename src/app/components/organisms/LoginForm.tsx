@@ -10,12 +10,14 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import googleIcon from '../../../../public/icon-google.svg';
+import { useAuth } from '../../../context/AuthContext';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
+  const { user } = useAuth();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -28,7 +30,7 @@ const LoginForm = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log('Login bem-sucedido');
-      router.push('/'); // Redireciona para a homepage após o login
+      router.push('/dashboard'); // Redireciona para o dashboard após o login
     } catch (error) {
       setError('Erro ao fazer login. Verifique suas credenciais.');
     }
@@ -39,11 +41,16 @@ const LoginForm = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       console.log('Login com Google bem-sucedido', result.user);
-      router.push('/dashboard'); // Redireciona para a homepage após o login
+      router.push('/dashboard'); // Redireciona para o dashboard após o login
     } catch (error) {
       setError('Erro ao fazer login com Google.');
     }
   };
+
+  if (user) {
+    router.push('/dashboard');
+    return null; // Evita a renderização do formulário de login se o usuário estiver autenticado
+  }
 
   return (
     <div className="w-full max-w-md p-10 bg-white rounded-lg shadow-lg glass-effect">
@@ -69,11 +76,11 @@ const LoginForm = () => {
         <ButtonEnter />
       </form>
       <div className="my-4 text-center">
-        <button onClick={handleGoogleLogin} className="w-48 text-sm bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-700">
+        <button onClick={handleGoogleLogin} className="w-48 text-sm bg-blue-500 text-black py-2 rounded-lg hover:bg-blue-700">
           <span className="flex justify-center items-center space-x-2">
-          <Image src={googleIcon} alt="Google" width={24} height={24} />
-          <span>Sign in with Google</span>
-        </span>
+            <Image src={googleIcon} alt="Google" width={24} height={24} />
+            <span>Sign in with Google</span>
+          </span>
         </button>
         <p className="text-sm text-center text-black mt-4">
           You dont have an account yet? <Link href="/register" className="text-black hover:underline">Sign up here</Link>
