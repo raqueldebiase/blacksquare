@@ -11,6 +11,7 @@ html {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --text-yellow: #E9B70D;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,7 +60,11 @@ body {
 }
 
 .text-bege {
-  color: #776B59;
+  color: #B46143;
+}
+
+.text-yellow {
+  color: var(--text-yellow);
 }
 
 /* custom bg */
@@ -85,6 +90,24 @@ body {
   background-size: cover;
 }
 
+.bg-login {
+  background-image: url('/login2.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+}
+
 
 /* Masonry layout */
 
@@ -100,4 +123,14 @@ body {
   border: 1px solid #071323;
 }
 
+/* general styles */
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.3); 
+  backdrop-filter: blur(10px); 
+  border-radius: 5px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  position: relative; 
+  z-index: 10; 
+}
 

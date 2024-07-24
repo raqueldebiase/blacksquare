@@ -1,9 +1,9 @@
 // src/app/layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Navbar from './components/organisms/Navbar';
+import Navbar from './app/components/organisms/Navbar';
 import './styles/globals.css';
-import Footer from './components/organisms/Footer';
+import Footer from './app/components/organisms/Footer';
 import { AuthProvider } from './context/AuthContext';
 
 const inter = Inter({ subsets: ['latin'] });

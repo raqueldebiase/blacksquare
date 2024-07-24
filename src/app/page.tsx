@@ -7,7 +7,7 @@ import Gallery from './components/organisms/Gallery';
 import Magazine from './components/organisms/Magazine';
 import Upcoming from './components/molecules/Upcoming';
 import Search from './components/organisms/Search';
-import '../app/globals.css';
+import '../styles/globals.css';
 import { AuthProvider } from '@/context/AuthContext';
 
 const HomePage = () => {

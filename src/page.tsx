@@ -1,12 +1,12 @@
 // src/app/page.tsx
 import React from 'react';
-import Hero from './components/molecules/Hero';
-import Presentation from './components/molecules/Presentation';
-import Spotlight from './components/organisms/Spotlight';
-import Gallery from './components/organisms/Gallery';
-import Magazine from './components/organisms/Magazine';
-import Upcoming from './components/molecules/Upcoming';
-import Search from './components/organisms/Search';
+import Hero from './app/components/molecules/Hero';
+import Presentation from './app/components/molecules/Presentation';
+import Spotlight from './app/components/organisms/Spotlight';
+import Gallery from './app/components/organisms/Gallery';
+import Magazine from './app/components/organisms/Magazine';
+import Upcoming from './app/components/molecules/Upcoming';
+import Search from './app/components/organisms/Search';
 import './styles/globals.css';
 
 const HomePage = () => {
