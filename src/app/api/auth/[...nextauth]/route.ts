@@ -1,14 +1,9 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
+import type { NextRequest } from 'next/server';
 
-// Definindo o tipo personalizado para o usuário
-interface CustomSessionUser {
-  id: string;
-  email: string;
-}
-
-export const authOptions = {
+const authOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
@@ -42,21 +37,27 @@ export const authOptions = {
     signIn: '/login',
   },
   session: {
-    strategy: 'jwt' as const,
+    strategy: 'jwt',
   },
   callbacks: {
-    async jwt({ token, user }: { token: any; user?: any }) {
+    async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
         token.email = user.email;
       }
       return token;
     },
-    async session({ session, token }: { session: any; token: any }) {
-      session.user = token ? { id: token.id, email: token.email } as CustomSessionUser : undefined;
+    async session({ session, token }) {
+      session.user = token ? { id: token.id, email: token.email } : undefined;
       return session;
     },
   },
 };
 
-export default NextAuth(authOptions);
+export async function GET(req: NextRequest) {
+  return NextAuth(req, authOptions);
+}
+
+export async function POST(req: NextRequest) {
+  return NextAuth(req, authOptions);
+}
