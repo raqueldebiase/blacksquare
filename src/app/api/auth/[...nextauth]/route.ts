@@ -1,8 +1,6 @@
-// src/app/api/auth/[...nextauth]/route.ts
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
-import { NextRequest, NextResponse } from 'next/server';
 
 // Definindo o tipo personalizado para o usuário
 interface CustomSessionUser {
@@ -44,7 +42,7 @@ export const authOptions = {
     signIn: '/login',
   },
   session: {
-    strategy: 'jwt' as const, // Utilize 'as const' para garantir o tipo correto
+    strategy: 'jwt' as const,
   },
   callbacks: {
     async jwt({ token, user }: { token: any; user?: any }) {
@@ -61,12 +59,5 @@ export const authOptions = {
   },
 };
 
-const handler = NextAuth(authOptions);
-
-export async function GET(req: NextRequest) {
-  return handler(req, { method: 'GET' });
-}
-
-export async function POST(req: NextRequest) {
-  return handler(req, { method: 'POST' });
-}
+// Exporte o handler do NextAuth diretamente
+export default NextAuth(authOptions);
