@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import '../globals.css'; 
+import '../styles/globals.css'; 
 import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext'; 
 
