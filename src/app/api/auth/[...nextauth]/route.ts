@@ -1,9 +1,21 @@
-import NextAuth from 'next-auth';
-import CredentialsProvider from 'next-auth/providers/credentials';
-import GoogleProvider from 'next-auth/providers/google';
-import type { NextRequest } from 'next/server';
+import NextAuth, { NextAuthOptions, Session } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
+import { JWT } from "next-auth/jwt";
 
-const authOptions = {
+// Definindo o tipo personalizado para o usuário
+interface CustomSessionUser {
+  id: string;
+  email: string;
+}
+
+// Atualizando o tipo JWT
+interface CustomJWT extends JWT {
+  id?: string;
+  email?: string;
+}
+
+export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
@@ -42,22 +54,18 @@ const authOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id = user.id;
-        token.email = user.email;
+        token.id = user.id as string;
+        token.email = user.email as string;
       }
       return token;
     },
     async session({ session, token }) {
-      session.user = token ? { id: token.id, email: token.email } : undefined;
+      if (token) {
+        session.user = { id: token.id as string, email: token.email as string } as CustomSessionUser;
+      }
       return session;
     },
   },
 };
 
-export async function GET(req: NextRequest) {
-  return NextAuth(req, authOptions);
-}
-
-export async function POST(req: NextRequest) {
-  return NextAuth(req, authOptions);
-}
+export default NextAuth(authOptions);
