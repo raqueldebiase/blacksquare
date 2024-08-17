@@ -1,5 +1,7 @@
 # BlackSquare
 
+https://blacksquare.vercel.app/
+
 **BlackSquare** is a modern e-commerce platform designed to deliver a seamless shopping experience, leveraging advanced web technologies and best practices for performance and scalability.
 
 ## Features
